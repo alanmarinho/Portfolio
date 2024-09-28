@@ -1,5 +1,3 @@
-# React Project Template
+# Portfólio
 
-- **TypeScript**
-- **Taiwindcss**
-- **Alias paths**
+
