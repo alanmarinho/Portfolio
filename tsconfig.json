@@ -8,9 +8,15 @@
       "@assets/*": [
         "./src/assets/*"
       ],
+      "@contexts/*": [
+        "./src/contexts/*"
+      ],
+      "@src/*": [
+        "./src*"
+      ],
       "@/*": [
-        "./src/*"
-      ]
+        "./*"
+      ],
     },
     "target": "ES2020",
     "module": "ESNext",

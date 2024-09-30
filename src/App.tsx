@@ -1,9 +1,11 @@
+import DashBoard from '@components/dashboard';
 import NavBAr from '@components/header';
 
 function App() {
   return (
     <>
       <NavBAr />
+      <DashBoard />
       <div id="about" className="flex flex-1 min-h-screen items-center justify-center text-red-600">
         <h1>About</h1>
       </div>
