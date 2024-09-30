@@ -8,11 +8,12 @@ export default {
     },
     extend: {
       screens: {
-        xxs: '370px',
+        xxs: '380px',
         xs: '400px',
       },
       colors: {
         primary: '#413B6B',
+        secondary: '#9489E4',
         white: '#fff',
         black: '#000',
         gray: '#333',
@@ -23,8 +24,11 @@ export default {
         },
       },
       animation: {
-        'loop-scroll-rtl': 'loop-scroll-rtl 6s linear infinite',
+        'loop-scroll-rtl': 'loop-scroll-rtl 5s linear infinite',
         'loop-scroll-dtt': 'loop-scroll-dtt 10s linear infinite',
+      },
+      transform: {
+        'scale-102': 'scale(1.02)',
       },
       keyframes: {
         'loop-scroll-rtl': {

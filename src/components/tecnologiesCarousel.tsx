@@ -18,8 +18,8 @@ const icons = [
 export default function TecnologiesCarousel() {
   return (
     <>
-      {icons.map((icon) => (
-        <Icon icon={icon} />
+      {icons.map((icon, id) => (
+        <Icon key={id} icon={icon} />
       ))}
     </>
   );

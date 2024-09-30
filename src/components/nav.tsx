@@ -18,9 +18,6 @@ export default function Nav() {
         <a onClick={() => isOpen && setIsOpen(!isOpen)} href="#academics">
           Academics
         </a>
-        <a onClick={() => isOpen && setIsOpen(!isOpen)} href="#contact">
-          Contact
-        </a>
       </>
     );
   };
@@ -30,7 +27,7 @@ export default function Nav() {
   return (
     <>
       <nav className="flex w-1/2 flex-row justify-end">
-        <div className="hidden md:flex w-full justify-between">
+        <div className="hidden md:flex justify-end gap-16">
           <Anchors />
         </div>
         <div className="md:hidden">

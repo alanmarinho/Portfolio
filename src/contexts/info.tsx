@@ -6,6 +6,10 @@ interface infoProps {
   name: string;
   role: string;
   openToWork: boolean;
+  address: {
+    state: string;
+    contry: string;
+  };
   picture: {
     gitHubPicture: boolean;
     altherURL: string;
@@ -14,6 +18,7 @@ interface infoProps {
   inWork: {
     position: string;
     company: string;
+    state: string;
     contry: string;
   };
   contact: {
@@ -33,6 +38,10 @@ export const InfoContext = ({ children }: { children: React.ReactNode }) => {
     name: geralInfo.name,
     role: geralInfo.role,
     openToWork: geralInfo.openToWork,
+    address: {
+      state: geralInfo.address.state,
+      contry: geralInfo.address.contry,
+    },
     picture: {
       gitHubPicture: geralInfo.picture.gitHubPicture,
       altherURL: geralInfo.picture.altherURL,
@@ -40,6 +49,7 @@ export const InfoContext = ({ children }: { children: React.ReactNode }) => {
     inWork: {
       position: geralInfo.inWork.position,
       company: geralInfo.inWork.company,
+      state: geralInfo.inWork.state,
       contry: geralInfo.inWork.contry,
     },
     contact: {
