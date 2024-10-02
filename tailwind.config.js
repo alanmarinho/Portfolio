@@ -17,10 +17,11 @@ export default {
         white: '#fff',
         black: '#000',
         gray: '#333',
-        languageColors: {
-          javaScript: '#F0DF47',
-          typeScript: '#1976D2',
-          html: '#E65100',
+        languages: {
+          typescript: {
+            200: '#bfdbfe',
+            400: '#60a5fa',
+          },
         },
       },
       animation: {
@@ -42,5 +43,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss'), require('autoprefixer')],
 };

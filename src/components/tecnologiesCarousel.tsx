@@ -4,7 +4,7 @@ const icons = [
   'css3',
   'figma',
   'go',
-  'html5',
+  'html',
   'javascript',
   'mongodb',
   'nodejs',

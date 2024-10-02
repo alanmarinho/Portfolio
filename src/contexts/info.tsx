@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import { geralInfo } from '@/ambientVariables';
 
-interface infoProps {
+interface InfoProps {
   theme: string;
   name: string;
   role: string;
@@ -27,13 +27,20 @@ interface infoProps {
     gitHub: { username: string; url: string };
   };
 }
-export const infosContext = createContext<{ myInfo: infoProps }>({ myInfo: geralInfo });
+
+interface contextData {
+  myInfo: InfoProps;
+  knowMe: boolean;
+  onKnowMe: (value: boolean) => void;
+}
+
+export const infosContext = createContext<contextData>({} as contextData);
 export const useInfo = () => {
   return useContext(infosContext);
 };
 
 export const InfoContext = ({ children }: { children: React.ReactNode }) => {
-  const [info, setInfo] = useState<infoProps>({
+  const [info, setInfo] = useState<InfoProps>({
     theme: geralInfo.theme,
     name: geralInfo.name,
     role: geralInfo.role,
@@ -58,8 +65,16 @@ export const InfoContext = ({ children }: { children: React.ReactNode }) => {
       gitHub: { username: geralInfo.contact.gitHub.username, url: geralInfo.contact.gitHub.url },
     },
   });
+  const [knowMe, setknowMe] = useState<boolean>(false);
+
+  const onKowMe = async (value: boolean) => {
+    setknowMe(value);
+  };
+
   const value = {
     myInfo: info,
+    knowMe,
+    onKnowMe: onKowMe,
   };
   return <infosContext.Provider value={value}>{children}</infosContext.Provider>;
 };

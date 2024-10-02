@@ -1,6 +1,7 @@
 import { FaGithub } from 'react-icons/fa';
 import Icon from './icon';
-
+import { useEffect, useState } from 'react';
+import { Colors } from '@/ambientVariables';
 interface cardProps {
   data: {
     title: string;
@@ -13,21 +14,35 @@ interface cardProps {
   };
 }
 
-const handleOpenWindow = (url: string) => {
-  window.open(url, '_blank', 'noopener,noreferrer');
-};
+interface ColorsType {
+  [key: string]: { primary: string; secondary: string };
+}
+
+const colors: ColorsType = Colors;
 
 export default function ProjectCard({ data }: cardProps) {
+  const [colorPrimary, setcolorPrimary] = useState<string>();
+  const [colorSecondary, setcolorSecondary] = useState<string>();
+  const handleOpenWindow = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  useEffect(() => {
+    const bgColor = colors[data.primaryTecnology.toLowerCase()] || 'zinc';
+    setcolorPrimary(bgColor.primary);
+    setcolorSecondary(bgColor.secondary);
+  }, [data.primaryTecnology]);
+
   return (
-    <div className="flex flex-col w-80 rounded-2xl overflow-hidden bg-blue-200">
-      <div className="flex flex-col bg-blue-400 p-2">
+    <div className={`flex flex-col w-80 rounded-2xl overflow-hidden`} style={{ backgroundColor: colorSecondary }}>
+      <div className={`flex flex-col p-2`} style={{ backgroundColor: colorPrimary }}>
         <div className="flex flex-col items-center justify-center mb-10 text-white">
           <h1 className="text-2xl">{data.title}</h1>
           <p className="text-sm text-center">{data.subTitle}</p>
         </div>
       </div>
       <div className="flex flex-col h-40 ">
-        <div className="absolute -mt-7 ml-14">
+        <div className="flex justify-center" style={{ transform: 'translate(0%, -50%)' }}>
           <div className="flex items-center gap-2 justify-center">
             <div className="flex justify-center gap-2">
               {data.tecnologiesUsed.slice(0, 3).map((item, id) => (
@@ -43,18 +58,18 @@ export default function ProjectCard({ data }: cardProps) {
             )}
           </div>
         </div>
-        <div className="flex mt-8 p-4 overflow-auto custom-scrollbar">
-          <p className="text-justify">{data.description}</p>
+        <div className="flex overflow-auto pr-2 pl-2 custom-scrollbar">
+          <p className="text-justify ">{data.description}</p>
         </div>
       </div>
-      <div className="flex justify-center mt-10 p-6 gap-3">
+      <div className="flex flex-col xxs:flex-row justify-center  p-6 gap-3">
         {!!data.demoLive && (
           <div
             onClick={() => data.demoLive && handleOpenWindow(data.demoLive)}
             className="flex items-center justify-center border-[1px] border-zinc-400 bg-white rounded-md p-3  hover:cursor-pointer hover:shadow-lg"
           >
             <p className="text-sm">Launch</p>
-            <div className="p-1 bg-blue-500 rounded-md ml-2">
+            <div className={`p-1 rounded-md ml-2`} style={{ backgroundColor: colorPrimary }}>
               <p className="text-sm text-white">Demo</p>
             </div>
           </div>
