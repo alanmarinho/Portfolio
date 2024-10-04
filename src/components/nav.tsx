@@ -6,16 +6,16 @@ export default function Nav() {
   const Anchors = () => {
     return (
       <>
-        <a onClick={() => isOpen && setIsOpen(!isOpen)} href="#about">
+        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#about">
           About
         </a>
-        <a onClick={() => isOpen && setIsOpen(!isOpen)} href="#skills">
+        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#skills">
           Skills
         </a>
-        <a onClick={() => isOpen && setIsOpen(!isOpen)} href="#projects">
+        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#projects">
           Projects
         </a>
-        <a onClick={() => isOpen && setIsOpen(!isOpen)} href="#academics">
+        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#academics">
           Academics
         </a>
       </>

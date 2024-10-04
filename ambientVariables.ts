@@ -5,7 +5,7 @@ export const geralInfo = {
   openToWork: true,
   address: {
     state: 'Ceará',
-    contry: 'Brazil',
+    contry: 'Brasil',
   },
   picture: {
     gitHubPicture: true,
@@ -34,3 +34,17 @@ export const Colors = {
   css: { primary: '#0277BD', secondary: '#60a5fa' },
   tailwindcss: { primary: '#00ACC1', secondary: '#7DE1ED' },
 };
+
+export const Skills = [
+  { language: 'JavaScript', emphasis: true },
+  { language: 'React Native', emphasis: false },
+  { language: 'MongoDb', emphasis: false },
+  { language: 'HTML5', emphasis: false },
+  { language: 'TypeScript', emphasis: true },
+  { language: 'CSS3', emphasis: false },
+  { language: 'ReactJs', emphasis: true },
+  { language: 'Python', emphasis: false },
+  { language: 'PostgreSQL', emphasis: false },
+  { language: 'NodeJs', emphasis: true },
+  { language: 'Figma', emphasis: false },
+];

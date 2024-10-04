@@ -5,7 +5,7 @@ import { Colors } from '@/ambientVariables';
 interface cardProps {
   data: {
     title: string;
-    subTitle: string;
+    subTitle?: string;
     primaryTecnology: string;
     tecnologiesUsed: string[];
     description: string;
@@ -38,7 +38,7 @@ export default function ProjectCard({ data }: cardProps) {
       <div className={`flex flex-col p-2`} style={{ backgroundColor: colorPrimary }}>
         <div className="flex flex-col items-center justify-center mb-10 text-white">
           <h1 className="text-2xl">{data.title}</h1>
-          <p className="text-sm text-center">{data.subTitle}</p>
+          {!!data.subTitle && <p className="text-sm text-center">{data.subTitle}</p>}
         </div>
       </div>
       <div className="flex flex-col h-40 ">

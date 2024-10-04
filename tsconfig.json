@@ -11,6 +11,9 @@
       "@contexts/*": [
         "./src/contexts/*"
       ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
       "@src/*": [
         "./src*"
       ],

@@ -5,11 +5,18 @@ import './index.css';
 import './main.css';
 import './css/extras.css';
 import { InfoContext } from '@contexts/info';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+  },
+]);
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <InfoContext>
-      <App />
+      <RouterProvider router={router} />
     </InfoContext>
   </StrictMode>,
 );

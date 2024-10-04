@@ -27,6 +27,8 @@ export default {
       animation: {
         'loop-scroll-rtl': 'loop-scroll-rtl 5s linear infinite',
         'loop-scroll-dtt': 'loop-scroll-dtt 10s linear infinite',
+        btnArrow: 'btnArrow 1s linear infinite',
+        shine: 'shine 2s',
       },
       transform: {
         'scale-102': 'scale(1.02)',
@@ -39,6 +41,17 @@ export default {
         'loop-scroll-dtt': {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-104.5%)' },
+        },
+        btnArrow: {
+          '0%': { transform: 'translateY(0)' },
+          '25%': { transform: 'translateY(-8%)' },
+          '50%': { transform: 'translateY(18%)' },
+          '100%': { transform: 'translateY(0%)' },
+        },
+        shine: {
+          '0%': { transform: ' background-position: 0% 50%' },
+          '50%': { transform: ' background-position: 100% 50%' },
+          '100%': { transform: ' background-position: 0% 50%' },
         },
       },
     },

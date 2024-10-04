@@ -11,3 +11,8 @@ html {
     transform: translateX(-100%);
   }
 }
+
+.bg-gold-gradient {
+  background: linear-gradient(45deg, #ffec8b, #ffa500);
+  animation: shine 3s linear infinite;
+}
