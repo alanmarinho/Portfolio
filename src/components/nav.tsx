@@ -2,28 +2,31 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Nav() {
-  const [isOpen, setIsOpen] = useState<boolean>();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   const Anchors = () => {
     return (
       <>
-        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#about">
+        <a className="hover:text-primary" onClick={isOpen ? handleToggle : undefined} href="#about">
           About
         </a>
-        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#skills">
+        <a className="hover:text-primary" onClick={isOpen ? handleToggle : undefined} href="#skills">
           Skills
         </a>
-        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#projects">
+        <a className="hover:text-primary" onClick={isOpen ? handleToggle : undefined} href="#projects">
           Projects
         </a>
-        <a className="hover:text-primary" onClick={() => isOpen && setIsOpen(!isOpen)} href="#academics">
+        <a className="hover:text-primary" onClick={isOpen ? handleToggle : undefined} href="#academics">
           Academics
         </a>
       </>
     );
   };
-  const hlandleOpen = () => {
-    isOpen && setIsOpen(!isOpen);
+
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
   };
+
   return (
     <>
       <nav className="flex w-1/2 flex-row justify-end">
@@ -31,7 +34,7 @@ export default function Nav() {
           <Anchors />
         </div>
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>{!isOpen ? <Menu color="#000" /> : <X color="#000" />}</button>
+          <button onClick={handleToggle}>{!isOpen ? <Menu color="#000" /> : <X color="#000" />}</button>
         </div>
       </nav>
       {isOpen && (

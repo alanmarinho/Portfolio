@@ -35,7 +35,7 @@ export const projects = [
     primaryTecnology: 'javascript',
     tecnologiesUsed: ['javascript', 'react', 'firebase', 'tailwindcss'],
     description: 'To Do list simples usando Firebase, ReactJS, NodeJs e javaScript',
-    repLink: 'https://github.com/alanmarinho/crud',
+    repLink: 'https://github.com/alanmarinho/to-doList',
   },
 ];
 

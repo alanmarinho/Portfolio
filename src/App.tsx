@@ -1,9 +1,9 @@
 import Botton from '@components/botton';
 import DashBoard from '@components/dashboard';
-import NavBAr from '@components/header';
+import Header from '@components/header';
 import ProjectCard from '@components/projectCard';
 import { academics, projects } from '@/reposData';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useInfo } from '@contexts/info';
 import Hello from '@components/hello';
 
@@ -15,6 +15,7 @@ import Link from '@components/text/link';
 import List from '@components/text/list/list';
 import Item from '@components/text/list/item';
 import ButtonComment from '@components/buttons/commentButtoon';
+import Nav from '@components/nav';
 
 function App() {
   const { onKnowMe, knowMe, myInfo } = useInfo();
@@ -44,9 +45,11 @@ function App() {
     };
   }, []);
 
+  const navItems = <Nav />;
+
   return (
     <div>
-      <NavBAr />
+      <Header navItems={navItems} />
       {knowMe ? (
         <DashBoard />
       ) : (
@@ -66,7 +69,7 @@ function App() {
                   <Bold>Instituto Federal do Ceará</Bold>.
                 </Text>
                 <Text>
-                  Tenho {new Date().getFullYear() - 2002} anos de idade e moro no estata do {myInfo.address.state},{' '}
+                  Tenho {new Date().getFullYear() - 2002} anos de idade e moro no estado do {myInfo.address.state},{' '}
                   {myInfo.address.contry} e estou sempre em busca de aprender um pouco mais a cada dia. Tenho
                   conhecimento em diversas tecnologias de <Bold>Front-end</Bold> e <Bold>Back-end</Bold>.
                 </Text>
@@ -93,8 +96,8 @@ function App() {
             </div>
             <Text>
               Estes são alguns dos projetos que já desenvolvi, envolvendo <Bold>Front end</Bold>, <Bold>Back end</Bold>,{' '}
-              <Bold>Banco de bados</Bold>, <Bold>APIs REST</Bold> e outros.
-            </Text>
+              <Bold>Banco de dados</Bold>, <Bold>APIs REST</Bold> e outros.
+            </Text>{' '}
             <Text>
               No meu <Link url={myInfo.contact.gitHub.url}>GitHub</Link> tem mais alguns :)
             </Text>
@@ -109,18 +112,19 @@ function App() {
               ))}
             </div>
             <Text>
-              Aqui estão alguns do projeto e atividades que já desenvolvi na faculdade, curso Ciencia da Computação no{' '}
-              <Bold>Instituto Federal do Ceará</Bold>, lá além de atividade puramente teóricas, também desenvolvi alguns
-              projetos praticos, envolvendo <Bold>Front end</Bold>, <Bold>Back end</Bold>, <Bold>Banco de bados</Bold>,{' '}
-              <Bold>APIs REST</Bold> além <Bold>Algorítmos</Bold> como:
+              Aqui estão alguns do projeto e atividades que já desenvolvi na faculdade, curso Ciência da Computação no{' '}
+              <Bold>Instituto Federal do Ceará</Bold>, lá além de atividades puramente teóricas, também desenvolvi
+              alguns projetos práticos, envolvendo <Bold>Front end</Bold>, <Bold>Back end</Bold>,{' '}
+              <Bold>Banco de dados</Bold>, <Bold>APIs REST</Bold>, além de <Bold>Algoritmos</Bold> como:
             </Text>
             <List>
-              <Item>Algorítimos Genéticos</Item>
+              <Item>Algoritmos Genéticos</Item>
               <Item>Analizador Léxico</Item>
-              <Item>Open Gl</Item>
+              <Item>OpenGl</Item>
             </List>
           </div>
-
+          {/* 
+          // para futuras atualizações
           <div className="flex p-5 flex-col gap-5">
             <h1 className="text-2xl">Visitantes</h1>
             <Text>Aqui estão alguns que já pessaram por aqui.</Text>
@@ -137,9 +141,9 @@ function App() {
               </Text>
             </div>
             <div className="flex justify-center gap-3">
-              <ButtonComment onClick={() => console.log('FSDFSF')}>Registar minha passagem</ButtonComment>
+              <ButtonComment href="/comments">Registar minha passagem</ButtonComment>
             </div>
-          </div>
+          </div> */}
           <div className="flex p-5 flex-col gap-5">
             <h1 className="text-2xl text-zinc-400">//end</h1>
           </div>

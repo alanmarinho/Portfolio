@@ -1,5 +1,4 @@
 import { ReactNode, Children, isValidElement, ReactElement } from 'react';
-import Item from '@components/text/list/itens';
 import { FaDotCircle } from 'react-icons/fa';
 import { GoDot } from 'react-icons/go';
 
