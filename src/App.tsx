@@ -2,7 +2,7 @@ import Botton from '@components/botton';
 import DashBoard from '@components/dashboard';
 import Header from '@components/header';
 import ProjectCard from '@components/projectCard';
-import { academics, projects } from '@/reposData';
+import { academics, projects, tecnicalTests } from '@/reposData';
 import { useEffect, useRef, useState } from 'react';
 import { useInfo } from '@contexts/info';
 import Hello from '@components/hello';
@@ -144,6 +144,26 @@ function App() {
               <ButtonComment href="/comments">Registar minha passagem</ButtonComment>
             </div>
           </div> */}
+          <div id="technical_tests" className="flex p-5 flex-col gap-5">
+            <h1 className="text-2xl">Technical Tests</h1>
+            <div className="flex gap-14 items-center overflow-x-auto">
+              {tecnicalTests.map((item, id) => (
+                <div>
+                  <ProjectCard data={item} key={id} />
+                </div>
+              ))}
+            </div>
+            <Text>
+              Alguns desafios para vagas na área de programação, <Bold>Front-end</Bold>,<Bold>Back-end</Bold>,{' '}
+              <Bold>Estágios</Bold>, etc.
+            </Text>
+            <List>
+              <Item>Corpo de E-Mail</Item>
+              <Item>APIs</Item>
+              <Item>Banco de Dados</Item>
+              <Item>ORMs</Item>
+            </List>
+          </div>
           <div className="flex p-5 flex-col gap-5">
             <h1 className="text-2xl text-zinc-400">//end</h1>
           </div>

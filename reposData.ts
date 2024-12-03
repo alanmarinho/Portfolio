@@ -75,3 +75,22 @@ export const academics = [
     repLink: 'https://github.com/alanmarinho/CuboOpenGl',
   },
 ];
+
+export const tecnicalTests = [
+  {
+    title: 'Desafio Mandarin',
+    // subTitle: 'Atividade onde um cubo mágico 2x2 foi desenvolvido como trabalho final da disciplina Computação Gráfica',
+    primaryTecnology: 'html',
+    tecnologiesUsed: ['html', 'css3'],
+    description: 'Teste técnico para vaga de estágio na empresa Mandarin. Conteúdo de E-Mail.',
+    repLink: 'https://github.com/alanmarinho/desafio_Mandarin',
+  },
+  {
+    title: 'Desafio BeTalent',
+    // subTitle: 'Atividade onde um cubo mágico 2x2 foi desenvolvido como trabalho final da disciplina Computação Gráfica',
+    primaryTecnology: 'typescript',
+    tecnologiesUsed: ['typescript', 'adonis', 'mysql', 'nodejs', 'docker', 'lucide'],
+    description: 'Teste técnico para vaga de desenvolvedor backEnd júnior na empresa BeTalent. API Rest.',
+    repLink: 'https://github.com/alanmarinho/desafio_BeTalent',
+  },
+];

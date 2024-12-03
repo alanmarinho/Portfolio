@@ -23,10 +23,14 @@ const colors: ColorsType = Colors;
 export default function ProjectCard({ data }: cardProps) {
   const [colorPrimary, setcolorPrimary] = useState<string>();
   const [colorSecondary, setcolorSecondary] = useState<string>();
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
   const handleOpenWindow = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const changeModalStatus = () => {
+    setModalOpen(!modalOpen);
+  };
   useEffect(() => {
     const bgColor = colors[data.primaryTecnology.toLowerCase()] || 'zinc';
     setcolorPrimary(bgColor.primary);
@@ -47,12 +51,17 @@ export default function ProjectCard({ data }: cardProps) {
             <div className="flex justify-center gap-2">
               {data.tecnologiesUsed.slice(0, 3).map((item, id) => (
                 <div className="flex items-center p-2 justify-center rounded-full bg-white border-[3px] border-slate-400">
-                  <Icon icon={item} />
+                  <button className="cursor-default" title={item}>
+                    <Icon icon={item} />
+                  </button>
                 </div>
               ))}
             </div>
             {data.tecnologiesUsed.length > 3 && (
-              <div className="flex items-center w-6 h-6 justify-center bg-white  rounded-full">
+              <div
+                onClick={changeModalStatus}
+                className="flex items-center w-6 h-6 justify-center bg-white cursor-pointer  rounded-full"
+              >
                 <p className="text-xs">+{data.tecnologiesUsed.length - 3}</p>
               </div>
             )}
@@ -82,6 +91,31 @@ export default function ProjectCard({ data }: cardProps) {
           <FaGithub color="#000" size={30} />
         </div>
       </div>
+      {modalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={changeModalStatus}
+        >
+          {/* Modal Content */}
+          <div className="bg-white p-6 rounded shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <h2 className="text-lg font-bold mb-4">Tecnologias do projeto {data.title}</h2>
+            <div className="flex justify-center gap-2">
+              {data.tecnologiesUsed.map((item, id) => (
+                <div className="flex items-center p-2 justify-center rounded-full bg-white border-[3px] border-slate-400">
+                  <button className="cursor-default" title={item}>
+                    <Icon icon={item} />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center">
+              <button onClick={changeModalStatus} className="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
