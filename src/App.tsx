@@ -89,7 +89,7 @@ function App() {
             <div className="flex gap-14 items-center overflow-x-auto">
               {projects.map((item, id) => (
                 <div>
-                  <ProjectCard data={item} key={id} />
+                  <ProjectCard {...item} key={id} />
                 </div>
               ))}
               {/* <Button icon={<FaPlus />}>Show more</Button> */}
@@ -107,7 +107,7 @@ function App() {
             <div className="flex gap-14 items-center overflow-x-auto">
               {academics.map((item, key) => (
                 <div>
-                  <ProjectCard data={item} key={key} />
+                  <ProjectCard {...item} key={key} />
                 </div>
               ))}
             </div>
@@ -149,7 +149,7 @@ function App() {
             <div className="flex gap-14 items-center overflow-x-auto">
               {tecnicalTests.map((item, id) => (
                 <div>
-                  <ProjectCard data={item} key={id} />
+                  <ProjectCard {...item} key={id} />
                 </div>
               ))}
             </div>

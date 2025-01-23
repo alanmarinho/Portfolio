@@ -1,4 +1,5 @@
 export const geralInfo = {
+  baseURL: './Portfolio/',
   theme: 'Ligth',
   name: 'Alan Marinho',
   role: 'Full Stack developer',

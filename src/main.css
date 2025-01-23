@@ -16,3 +16,6 @@ html {
   background: linear-gradient(45deg, #ffec8b, #ffa500);
   animation: shine 3s linear infinite;
 }
+.white-space-pre-line {
+  white-space: pre-line;
+}

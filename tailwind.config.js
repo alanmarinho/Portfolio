@@ -1,5 +1,5 @@
-import { transform } from 'typescript';
-
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -54,7 +54,10 @@ export default {
           '100%': { transform: ' background-position: 0% 50%' },
         },
       },
+      whitespace: {
+        'pre-line': 'pre-line',
+      },
     },
   },
-  plugins: [require('tailwindcss'), require('autoprefixer')],
+  plugins: [tailwindcss, autoprefixer],
 };

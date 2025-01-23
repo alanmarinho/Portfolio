@@ -1,3 +1,5 @@
+import { cardProps } from '@components/projectCard';
+
 export const projects = [
   {
     title: 'GitHub Finder',
@@ -21,13 +23,13 @@ export const projects = [
   },
 
   {
-    title: 'Crud',
-    subTitle: 'Crud feito com typescript, node, postgreSql e docker',
+    title: 'fully-containerized-app',
+    subTitle: 'Deploy de um app "completo" em docker. Front, Back e Banco de Dados',
     primaryTecnology: 'typescript',
-    tecnologiesUsed: ['typescript', 'nodejs', 'prisma', 'docker', 'postgresql'],
+    tecnologiesUsed: ['typescript', 'docker', 'adonis', 'mysql', 'react'],
     description:
-      'Projeto envolvendo o CRUD completo de um visitante, podendo criar, salvar, editar e excluir dados. Feito com NodeJs escrito em TypeScript, banco de dados PostgreSQL operado pelo Prisma e rodando no Docker, no front end foi usado ReacJS',
-    repLink: 'https://github.com/alanmarinho/crud',
+      'Projeto consiste em um app CRUD "completo", contendo front-end, back-end e banco de dados orquestrados com Docker.',
+    repLink: 'https://github.com/alanmarinho/fully-containerized-app',
   },
   {
     title: 'To do List',
@@ -76,7 +78,7 @@ export const academics = [
   },
 ];
 
-export const tecnicalTests = [
+export const tecnicalTests: cardProps[] = [
   {
     title: 'Desafio Mandarin',
     // subTitle: 'Atividade onde um cubo mágico 2x2 foi desenvolvido como trabalho final da disciplina Computação Gráfica',
@@ -84,6 +86,12 @@ export const tecnicalTests = [
     tecnologiesUsed: ['html', 'css3'],
     description: 'Teste técnico para vaga de estágio na empresa Mandarin. Conteúdo de E-Mail.',
     repLink: 'https://github.com/alanmarinho/desafio_Mandarin',
+    status: 'reproved', // reproved, approved, pending
+    feedBack:
+      '[...] Infelizmente, desta vez sua seleção não foi possível para o processo seletivo em nossa agência. [...]',
+    score: 1, // 0-10/10,
+    candidatesNote:
+      'O feedback foi bastante genérico, possivelmente sendo apenas um e-mail automático.\nNão foi citado o teste técnico no feedback, apenas um agradecimento pelo tempo gasto e a manifestação de desejo de sucesso na carreira do candidato. \nNão foi possível confirmar com certeza, no feedBack enviado pela Empresa, que o projeto submetido como objeto do teste técnico foi de fato analisado pela equipe de desenvolvedores da empresa.',
   },
   {
     title: 'Desafio BeTalent',
@@ -92,5 +100,11 @@ export const tecnicalTests = [
     tecnologiesUsed: ['typescript', 'adonis', 'mysql', 'nodejs', 'docker', 'lucide'],
     description: 'Teste técnico para vaga de desenvolvedor backEnd júnior na empresa BeTalent. API Rest.',
     repLink: 'https://github.com/alanmarinho/desafio_BeTalent',
+    status: 'reproved',
+    feedBack:
+      '**Descrição Aproximada**\n\n[...] \n Após análise do teste pelos nossos Tech Leads, aplicando os critérios estabelecidos nas regras e pela concorrência, você não foi selecionado para a próxima etapa do processo seletivo. \n Não desanime, seu currículo permanecerá em nosso banco de talentos. \nSegue abaixo algumas observações levadas em conta na avaliação.\n \n **Status da observação:**\n🟢 Baixa (Sem problemas / Ok)\n🟡 Média (Atenção necessária)\n🟠 Alta (Problemas potenciais)\n🔴 Crítica (Problema sério)\n⚫ Bloqueio (Sistema inoperante)\n\n 🟢 Vários `console.log` perdidos no código.\n 🟢 Maior atenção na organização das rotas.\n 🟡 Erros de ortografia em retornos e nomeações.\n 🟠 Modelagem de banco com pontos requeridos ausentes.\n\n [...]',
+    score: 10,
+    candidatesNote:
+      'O Feedback foi bem rico e personalizado, demonstrando que o teste técnico foi de fato e cuidadosamente analisado.\nA empresa foi bastante empática e gentil, e também trouxe observações do teste no Feedback, enriquecendo o retorno e trazendo para o candidato a noção do porquê não foi aprovado para seguir no processo seletivo.',
   },
 ];
