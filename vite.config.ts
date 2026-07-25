@@ -1,19 +1,22 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
-import { geralInfo } from './ambientVariables';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import path from "node:path";
 
 export default defineConfig({
-  plugins: [react()],
-  base: './',
+  base: "/",
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './'),
-      '@src': path.resolve(__dirname, '/src'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@assets': path.resolve(__dirname, 'src/assets'),
-      '@contexts': path.resolve(__dirname, 'src/contexts'),
-      '@screens': path.resolve(__dirname, 'src/screens'),
+      "@": path.resolve(__dirname, "./src"),
+      "@context": path.resolve(__dirname, "./src/context"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
     },
   },
 });
+  
