@@ -71,7 +71,7 @@ export const projects: IProject[] = [
         icon: SiPython,
         color: "#FFF449",
         repositoryUrl: "https://github.com/ceasaTracker",
-        liveUrl: "https://ceasatracker.alanmarinho.com.br/",
+        liveUrl: "https://ceasatracker.alanmarinho.dev/",
     },
     {
         name: "ABC da Amazônia wiki",
@@ -89,7 +89,7 @@ export const projects: IProject[] = [
         icon: SiTypescript,
         color: "#007DCC",
         repositoryUrl: "https://github.com/alanmarinho/alphabet",
-        liveUrl: "https://games.alanmarinho.com.br/",
+        liveUrl: "https://games.alanmarinho.dev/",
     },
     {
         name: "Algorítimo Genético",
